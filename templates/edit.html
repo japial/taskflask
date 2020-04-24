@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %} Simple Flask App {% endblock %}
+
+{% block body %}
+<div class="card">
+    <div class="card-header text-center">
+         <a href="/"><h3>Task Flask</h3></a>
+    </div>
+    <div class="card-body">
+        <form method="POST" action="/edit/{{task.id}}">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="form-group mr-2">
+                        <input type="text" value="{{task.content}}" name="content" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <select name="completed" class="form-control">
+                            <option value="1">Completed</option>
+                            <option value="0">Pending</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                     <div class="form-group">
+                        <button type="submit" class="btn btn-success">
+                            Update
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
